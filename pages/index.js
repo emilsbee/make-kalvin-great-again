@@ -19,8 +19,8 @@ export const getServerSideProps = async ({ req }) => {
     const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`)
     const weather = await res.json();
 
-    if (weather && weather.current_weather) {
-      currentWeather['temperature'] = weather.current_weather.temperature + 273.15;
+    if (weather && weather.current_weather && weather.current_weather.temperature) {
+      currentWeather['temperature'] = (weather.current_weather.temperature + 273.15).toFixed(2);
     }
   }
   
