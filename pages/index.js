@@ -35,9 +35,14 @@ export default function Home({ city, temperature }) {
       return `The temperature in ${city} is pleasant ${temperature} kelvin`;
     } else return 'Sorry, could not determine your location'
   }
+
   return (
     <div className="flex w-full h-full justify-start items-center flex-col bg-[rgb(13,13,13)] p-8 pt-[10%]">
-      <Image src="/images/william-thomson.png" alt="William Thomson" width={180} height={264}/>
+      <div className='w-fit flex justify-center items-center flex-col'>
+        <Image src="/images/william-thomson.png" alt="William Thomson" width={180} height={264}/>
+        <p className="text-white text-xl mt-8 mb-2 self-center">Make Kelvin great again!</p>
+        <p className="text-white text-lg ml-8 italic self-end">- William Thomson, 1st Baron Kelvin</p>
+      </div>
       <h2 className='text-white text-2xl mt-12'>
         {text(city, temperature)}
       </h2>
