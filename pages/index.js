@@ -32,7 +32,7 @@ export const getServerSideProps = async ({ req }) => {
 export default function Home({ city, temperature }) {
   const text = (city, temperature) => {
     if (city && temperature) {
-      return `The temperature in {city} is pleasant {temperature} kelvin`;
+      return `The temperature in ${city} is pleasant ${temperature} kelvin`;
     } else return 'Sorry, could not determine your location'
   }
   return (
