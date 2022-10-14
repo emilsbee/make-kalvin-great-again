@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 
 export const getServerSideProps = async ({ req }) => {
   const forwarded = req.headers["x-forwarded-for"]
@@ -38,6 +39,10 @@ export default function Home({ city, temperature }) {
 
   return (
     <div className="flex w-full h-full justify-start items-center flex-col bg-[rgb(13,13,13)] p-8 pt-[10%]">
+      <Head>
+        <title>Make kelvin great again</title>
+        <meta property="og:title" content="Make kelvin great again" key="title" />
+      </Head>
       <div className='w-fit flex justify-center items-center flex-col'>
         <Image src="/images/william-thomson.png" alt="William Thomson" width={180} height={264}/>
         <p className="text-white text-xl mt-8 mb-2 self-center">Make Kelvin great again!</p>
