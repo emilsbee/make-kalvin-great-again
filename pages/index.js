@@ -126,17 +126,14 @@ export default function Home({ city, temperature, phrase }) {
         <p className="text-white text-xl mt-8 mb-2 self-center">Make Kelvin great again!</p>
         <p className="text-white text-lg ml-8 italic self-end">- William Thomson, 1st Baron Kelvin</p>
       </div>
-      <h2 className='text-white text-2xl mt-12'>
-        {(city && temperature) ? (
+      <p className='text-white text-xl mt-12 max-w-3xl'>
+        {(city && temperature && phrase) ? (
           <>
-            The temperature in {city} is <b>{temperature}</b> kelvin.
+            The temperature in {city} is <b>{temperature}</b> kelvin. {phrase}
           </>
         ) : (
           <>Sorry, could not determine your location.</>
         )}
-      </h2>
-      <p className='text-white text-xl mt-12 max-w-3xl'>
-        {phrase}
       </p>
     </div>
   )
